@@ -40,10 +40,10 @@ public class Tienda {
 
     @Override
     public String toString() {
-        return "Tienda >>" +
+        return "Tienda ->>" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", ubicacion='" + ubicacion + '\'' +
-                "<<";
+                "<<-";
     }
 }

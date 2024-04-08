@@ -49,7 +49,7 @@ public class ClienteModel implements ClienteCRUDRepository {
     public Cliente buscarPorNombre(String nombre) {
         //1. Abrimos la conexion
         Connection objconnection = ConfigDB.openConnection();
-        //Instancio un product en null para o vacío para llenarlo con la respuesta
+        //Instancio un cliente en null para o vacío para llenarlo con la respuesta
         Cliente objCliente = new Cliente();
         //try-catch ya que algo puede fallar
         try {

@@ -49,7 +49,7 @@ public class CompraModel implements CompraCRUDRepository {
     public List<Compra>  buscarComprasDeProduct(int id) {
         //1. Abrimos la conexion
         Connection objconnection = ConfigDB.openConnection();
-        //Instancio un product en null para o vacío para llenarlo con la respuesta
+        //Instancio una lista de compra en null para o vacío para llenarlo con la respuesta
         List<Compra> listComprasProducto = new ArrayList<>();
         //try-catch ya que algo puede fallar
         try {
@@ -122,7 +122,7 @@ public class CompraModel implements CompraCRUDRepository {
             // Ejecutamos el query
             ResultSet objResult = objPrepared.executeQuery();
             while (objResult.next()) {
-                //Instancio un product en null para o vacío para llenarlo con la respuesta
+
                 Compra objCompra = new Compra();
                 Cliente objCliente = new Cliente();
                 Producto objProducto = new Producto();

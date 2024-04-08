@@ -14,21 +14,14 @@ public class ClienteController {
 
     public  void agregarCliente (){
         Cliente objCliente = new Cliente();
-        //Listo las tiendas para que elija cual tienda le va a agregar un producto
-
-
 
         String nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre cliente ");
         String apellido = JOptionPane.showInputDialog(null, "Ingrese el apellido cliente ");
         String email = JOptionPane.showInputDialog(null, "Ingrese el email cliente ");
 
-
-
         objCliente.setNombre(nombre);
         objCliente.setEmail(email);
         objCliente.setApellido(apellido);
-
-
         objClientMod.agregarCliente(objCliente);
     }
     public void listarClientes() {
@@ -39,11 +32,16 @@ public class ClienteController {
         }
         JOptionPane.showMessageDialog(null, productosStr);
     }
+    /**
+     * <h3>Metodo para obteber la lista pero en String</h3>
+     * <p>a diferencia de la anterior que la uso en la vista esta la utilizo en los demas metodos como un String</p>
+     * @return la lista como String
+     */
     public String listarInStr(){
         List<Cliente> listTemp = objClientMod.listarClientes();
-        String list = "🤷‍♂️ Listar Clientes  \n";
+        String list = "🤷‍ Listar Clientes  \n";
 
-        //Iteramos sobre la lista que devuelve el método find All
+        //Iteramos sobre la lista que devuelve el método listar clientes
         for (Cliente  clienteTemp: listTemp) {
 
 

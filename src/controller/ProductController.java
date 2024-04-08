@@ -27,9 +27,6 @@ public class ProductController {
     public void agregarProducto() {
         Producto objProducto = new Producto();
 
-        //Listo las tiendas para que elija cual tienda le va a agregar un producto
-
-
         int idTienda = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el id de la tienda que vas a agregar un producto" + "\n" + this.listarTiendas()));
         String nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del producto ");
         double precio = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el precio del producto "));
@@ -51,6 +48,12 @@ public class ProductController {
         }
         JOptionPane.showMessageDialog(null, productosStr);
     }
+
+    /**
+     * <h3>Metodo para obteber la lista pero en String</h3>
+     * <p>a diferencia de la anterior que la uso en la vista esta la utilizo en los demas metodos como un String</p>
+     * @return la lista como String
+     */
     public String listarInStr(){
         List<Producto> listTemp = objProductMod.listarProductos();
         String list = "🤷‍♂️ List Products \n";
@@ -85,9 +88,9 @@ public class ProductController {
         double precio = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el precio del producto ",objProductoAct.getPrecio()));
 
         int stock = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el stock del producto",objProductoAct.getStock()));
+
         objProductoAct.setNombre(nombre);
         objProductoAct.setPrecio(precio);
-
         objProductoAct.setStock(stock);
 
         objProductMod.actualizarProducto(objProductoAct);
@@ -97,6 +100,6 @@ public class ProductController {
         int idDel = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el id que va a eliminar " + "\n" + this.listarInStr()));
 
         objProductMod.borrarProducto(idDel);
-        JOptionPane.showMessageDialog(null,"Se borro correctamente");
+
     }
 }
